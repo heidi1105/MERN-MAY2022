@@ -27,7 +27,7 @@ for(let i=0; i< 5; i++){
     console.log(i)
 }
 
-const trips = ["Japan", "Spain", "France", "Norway"] // memory address
+const trips = ["Japan", "Spain", "France", "Norway"] // memory location
 trips.push("Iceland")
 trips.pop()
 trips.pop()
@@ -42,14 +42,17 @@ const post = {
 }
 console.log(post)
 
-// destructuring
+// --------------destructuring ----------------
 const titleFromPost = post.title;
 const viewersfromPost = post.viewers
 console.log(titleFromPost)
 // object destructuring: naming matters, order doesn't matter
-const {title, ...details} = post // search for the keys inside the post, grab the value and store it
-console.log(title)
-console.log(details)
+const {title: newTitle, viewers, likes, description} = post // search for the keys inside the post, grab the value and store it
+console.log(newTitle) 
+// 1. instantiate const newTitle 
+// 2. find the value of title from post 
+// 3. assign that value into newTitle
+
 
 
 //const trips = ["Japan", "Spain", "France", "Norway"] 
@@ -58,16 +61,20 @@ const [firstPlace, , thirdPlace] = trips // array destructuring: naming doesn't 
 // console.log(thirdPlace)
 
 
-// spread/rest
-const postCopy = {...post}
-// console.log(postCopy)
-const tripsCopy = [...trips]
-console.log(tripsCopy)
-tripsCopy.pop();
-console.log(tripsCopy)
-console.log(trips)
 
-// arrow function
+// --------------spread/rest ----------------
+// const postCopy = {...post}
+// console.log(postCopy)
+const tripsCopy = ["Seoul", ...trips]
+console.log(tripsCopy)
+const postCopy = {likes: 10, ...post }
+console.log(postCopy)
+
+
+
+// --------------Arrow Functions ----------------
+
+// normal function
 function printHello(){
     console.log("Hello");
 } // () => {}
@@ -77,37 +84,74 @@ const printHello2 = () =>{
     console.log("Hello2")
 }
 
-// change Price
+// change Price (normal)
 function changePrice(price, discount){
     return price * discount;
 }
-
+// change Price2 (longhanded arrow function, need the keyword return)
 const changePrice2 = (price, discount) =>{
     return price * discount;
 }
 
-// shorthanded version -- () or no {} --> a return 
-const changePrice3 = (price, discount) => {price *discount}
+// changePrice3: shorthanded arrow function -- with() or no {} --> implicit return statement 
+const changePrice3 = (price, discount) => (price *discount)
+
+const changePrice4 = (price, discount)=>{ // 20% off, but max of $20 discount 
+     //$10 -> $8, $200 -> $20
+    if(price< 100){
+        return price*discount;
+    }else{
+        return price -20;
+    }
+}
 
 
 console.log(changePrice(100, 0.8))
 console.log(changePrice2(100, 0.8))
 console.log(changePrice3(100, 0.8))
-
-
-
-printHello();
-printHello2();
-
-
-
+console.log(changePrice4(200, 0.8))
+console.log(changePrice3(80, 0.8))
 
 
 // ternary opeartor
+rating = 8
+if(rating>7){
+    console.log("This is a good movie")
+}else{
+    console.log("This is a terrible movie")
+}
+
+(rating>7)?
+    console.log("This is a good movie2"):
+    console.log("This is a terrible movie2");
+// (condition)? (result if condition===true) : (else)
 
 
 
+// short-circuited logical operator &&
+const rating2 = 9;
+(10>7)&&console.log("If statement: good movie")
+rating<=7&&console.log("If statement: bad movie")
 
+
+const changePrice5 = (price, discount)=>{ // 20% off, but max of $20 discount 
+    return price > 100 ? 
+        price - 20 : 
+        price * discount
+}
+console.log(changePrice5(300, 0.8))
+
+
+const changePrice6 = (price, discount)=>( // 20% off, but max of $20 discount 
+    price > 100 ? 
+        price - 20 : 
+        price * discount
+)
+console.log(changePrice5(300, 0.8))
+
+
+
+//price > 100 ? price - 20 : price = price - (price * discount)
 
 // const discountedPrices = prices.map((price)=>{
 //     if(price >=100){
