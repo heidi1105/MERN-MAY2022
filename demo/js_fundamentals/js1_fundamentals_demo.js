@@ -38,7 +38,8 @@ const post = {
     title: "First day in MERN",
     viewers: 1000,
     likes: 500,
-    description: "An awesome day with MERN. It just works"
+    description: "An awesome day with MERN. It just works",
+    hashtags: ["excellent", "great", "fun"]
 }
 console.log(post)
 
@@ -65,10 +66,15 @@ const [firstPlace, , thirdPlace] = trips // array destructuring: naming doesn't 
 // --------------spread/rest ----------------
 // const postCopy = {...post}
 // console.log(postCopy)
-const tripsCopy = ["Seoul", ...trips]
+const tripsCopy2 = [...trips]
+const tripsCopy = [...trips, "Seoul"]
 console.log(tripsCopy)
-const postCopy = {likes: 10, ...post }
+const postCopy = { ...post, hashtags: [...post.hashtags] }
+postCopy.hashtags.push("new hashtag")
+postCopy.title = "new title"
 console.log(postCopy)
+console.log(post)
+
 
 
 
@@ -121,16 +127,17 @@ if(rating>7){
     console.log("This is a terrible movie")
 }
 
-(rating>7)?
-    console.log("This is a good movie2"):
-    console.log("This is a terrible movie2");
+(rating>7)? // if(rating>7)
+    console.log("This is a good movie2"): //  if-condition is true, the result
+    console.log("This is a terrible movie2") // else
 // (condition)? (result if condition===true) : (else)
 
 
 
 // short-circuited logical operator &&
+// (condition1)&&(condition2) && (condition3) && (result to be displayed if all conditions are true)
 const rating2 = 9;
-(10>7)&&console.log("If statement: good movie")
+rating2>7&&console.log("If statement: good movie")
 rating<=7&&console.log("If statement: bad movie")
 
 
