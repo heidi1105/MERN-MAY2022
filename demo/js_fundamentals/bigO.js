@@ -10,7 +10,7 @@ const ex1 = (arr)=>{
     console.log(sum+ " , " + product)
 }
 
-
+// O(2n) : O(N)
 
 const ex2 = (arr) =>{
     for(let i=0; i< arr.length; i++){
@@ -19,7 +19,7 @@ const ex2 = (arr) =>{
         }
     }
 }
-
+// O(n^2)
 
 const ex3 = (arr) =>{
     for(let i=0; i< arr.length; i++){
@@ -28,6 +28,7 @@ const ex3 = (arr) =>{
         }
     }
 }
+// O(n^2)
 
 
 const ex4 = (arrA, arrB)=>{
@@ -38,7 +39,7 @@ const ex4 = (arrA, arrB)=>{
     }    
 }
 
-
+// O(a*b)
 
 const ex5 = (arr1, arr2)=>{
     for(let i=0; i< arr1.length; i++){
@@ -50,7 +51,7 @@ const ex5 = (arr1, arr2)=>{
     }    
 }
 
-
+// O(n^2) 
 
 const ex6 = (arr) =>{
     for(let i=0; i<arr.length/2 ; i++){
@@ -61,6 +62,7 @@ const ex6 = (arr) =>{
     }
 }
 
+// O(n/2)
 
 
 
@@ -72,15 +74,14 @@ const ex7 = (n) =>{
         console.log(1);
         return 1;
     }else{
-        let prev = powersOf2(n/2)
+        let prev = ex7(n/2)
         let curr = prev *2;
         console.log(curr)
         return curr
     }
 }
 
-
-
+// O(log n)
 
 
 
