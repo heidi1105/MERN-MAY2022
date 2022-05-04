@@ -1,11 +1,19 @@
+import StateComponent from './components/StateComponent';
+import StylingComponent from './components/StylingComponent';
 import TVShowCard from './components/TVShowCard';
 
 
 function App() {
   return (
-    <div>
-      <h1> All TV Shows</h1>
-      <TVShowCard 
+    <div className='container mt-5'>
+
+      <StylingComponent color="rebeccapurple" />
+
+      {/* <StateComponent title="WandaVision"/>
+      <StateComponent title="GOT"/>
+      <StateComponent title="The 100"/> */}
+
+      {/* <TVShowCard 
         title="Snowpiercer" 
         description="Very awesome" 
         episodes ={ 30 } 
@@ -14,7 +22,7 @@ function App() {
       <TVShowCard title="Last Kingdom" description="About UK history" episodes ={ 60 }  
         hasWatched={true} hashtags={["UK", "Make me read history", "A lot of fighting"]}/>
       <TVShowCard title="Breaking Bad" description="Love it" episodes ={ 400 }  
-        hasWatched={false} hashtags={["Cool", "he has cancer", "A lot of chemistry"]}/>
+        hasWatched={false} hashtags={["Cool", "he has cancer", "A lot of chemistry"]}/> */}
     </div>
   );
 }
