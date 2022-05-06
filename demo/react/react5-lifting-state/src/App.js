@@ -12,16 +12,11 @@ function App() {
     setMessages([...messages, newMessage])
   }
 
-
-  
-
   return (
     <div >
       {/* <ParentComponent /> */}
       <MessageForm onNewMessage = {handleNewMessage}/>
       <MessageDisplay currMessage={currMessage} messages={messages}/>
-
-
 
 
     </div>

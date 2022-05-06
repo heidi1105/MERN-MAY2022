@@ -8,7 +8,7 @@ const MessageDisplay = (props) => {
         {
             props.messages.map((unicorn, i)=>{
                 return(
-                    <p key={i} style={{color: unicorn }}> {unicorn}</p>
+                    <p key={i} style={{ color: unicorn }}> {unicorn}</p>
                 )
             })
         }
