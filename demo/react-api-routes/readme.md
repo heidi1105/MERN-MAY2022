@@ -26,8 +26,8 @@ import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 	<BrowserRouter>
 		<Link to ="/about"> About </Link>  
 		<Routes>  
-                <Route path="/about" element={<About />} />
-                <Route path="/:keyword" element={<Keyword />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/:keyword" element={<Keyword />} />
 		</Routes>
 	</BrowserRouter>
 ```
