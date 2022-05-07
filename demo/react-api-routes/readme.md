@@ -1,5 +1,24 @@
 ## ROUTER
 #### app.js
+1. Link -- similar to a tag 
+2. Switch(v5), Routes(v6) -- if/else statement.. if it fits the first, go to the first
+3. Route -- if the path fits, render the component
+v5:
+```
+<Route exact path="/about">  
+	<About />  
+</Route>
+```
+
+v6:
+```   
+<Route path="/about" element={<About />} />
+```
+
+4. v5: can add the keyword "exact" for exact match
+5. v6: "exact" is not needed. 
+
+
 v5
 
 ```
@@ -31,25 +50,6 @@ import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 		</Routes>
 	</BrowserRouter>
 ```
-
-
-1. Link -- similar to a tag 
-2. Switch(v5), Routes(v6) -- if/else statement.. if it fits the first, go to the first
-3. Route -- if the path fits, render the component
-v5:
-```
-<Route exact path="/about">  
-	<About />  
-</Route>
-```
-
-v6:
-```   
-<Route path="/about" element={<About />} />
-```
-
-4. v5: can add the keyword "exact" for exact match
-5. v6: "exact" is not needed. 
 
 #### To redirect  
 1. import the dependency (v5:  useHistory , v6:  useNavigate)
