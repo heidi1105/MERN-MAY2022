@@ -44,7 +44,8 @@ v5:
 ```
 
 v6:
-```   <Route path="/about" element={<About />} />
+```   
+<Route path="/about" element={<About />} />
 ```
 
 4. v5: can add the keyword "exact" for exact match
