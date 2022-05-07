@@ -3,6 +3,7 @@
 1. Link -- similar to a tag 
 2. Switch(v5), Routes(v6) -- if/else statement.. if it fits the first, go to the first
 3. Route -- if the path fits, render the component
+
 v5:
 ```
 <Route exact path="/about">  
@@ -53,10 +54,8 @@ import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 
 #### To redirect  
 1. import the dependency (v5:  useHistory , v6:  useNavigate)
-v5:
-```
-import {useHistory} from "react-router-dom"
-```
+
+v5: ```import {useHistory} from "react-router-dom" ```
 v6:
 ```
 import { useNavigate} from "react-router"
