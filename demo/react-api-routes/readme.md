@@ -56,27 +56,17 @@ import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 1. import the dependency (v5:  useHistory , v6:  useNavigate)
 
 v5: ```import {useHistory} from "react-router-dom" ```
-v6:
-```
-import { useNavigate} from "react-router"
-```
+
+v6: ``` import { useNavigate} from "react-router" ```
 
 2. instantiate inside the function before return 
-v5:
-```
-const history = useHistory()
-```
-v6:
-```
-const navigate = useNavigate() 
-```
+
+v5: ``` const history = useHistory() ```
+
+v6: ``` const navigate = useNavigate() ```
 
 3. to redirect, use history.push("url") (v5) or navigate("url")
-v5:
-```
-history.push(`REDIRECT URL`)
-```
-v6:
-```
-navigate(`REDIRECT URL`)
-```
+
+v5: ``` history.push(`REDIRECT URL`) ```
+
+v6: ``` navigate(`REDIRECT URL`) ```
