@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import FetchComponent from './components/FetchComponent';
+import DisplayOnLoad from './components/DisplayOnLoad';
+import PokemonForm from './components/PokemonForm';
 
 function App() {
   return (
     <div>
-      <FetchComponent />
+      <PokemonForm />
+      {/* <DisplayOnLoad /> */}
+
+      {/* <FetchComponent /> */}
     </div>
   );
 }
