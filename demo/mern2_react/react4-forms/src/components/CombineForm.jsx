@@ -41,24 +41,27 @@ const CombineForm = () => {
                 valToUpdate.length < 3?
                     errors.username = "Username must be at least 3 characters":
                     errors.username =""
-                    break;
+                break;
             case 'age':
                 valToUpdate < 0?
                     errors.age="Age must be a positive number":
                     errors.age=""
-                    break;
+                break;
 
             case 'password':
                 valToUpdate.length < 8?
                     errors.password ="Password must be at least 8 characters":
                     errors.password =""
-                    break;
+                break;
+
             case 'confirm':
                 valToUpdate !== formState.password?
                     errors.confirm = "Password must match":
                     errors.confirm =""
-                    break;
+                break
             default:
+                
+
         }
         setFormError(errors)
 
