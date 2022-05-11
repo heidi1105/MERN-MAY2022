@@ -9,7 +9,7 @@ v5:
 <Route exact path="/about">  
 	<About />  
 </Route>
-```
+```.js
 
 v6:
 ```   
