@@ -5,14 +5,14 @@
 3. Route -- if the path fits, render the component
 
 v5:
-```
+```js
 <Route exact path="/about">  
 	<About />  
 </Route>
-```.js
+```
 
 v6:
-```   
+```js   
 <Route path="/about" element={<About />} />
 ```
 
@@ -22,7 +22,7 @@ v6:
 
 v5
 
-```
+```js
 import {BrowserRouter, Link, Switch, Route } from "react-router-dom"
 
 	<BrowserRouter>
@@ -40,7 +40,7 @@ import {BrowserRouter, Link, Switch, Route } from "react-router-dom"
 
 v6
 
-```
+```js
 import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 
 	<BrowserRouter>
