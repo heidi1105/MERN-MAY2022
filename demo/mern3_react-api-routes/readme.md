@@ -57,7 +57,7 @@ import {BrowserRouter, Link, Routes, Route } from "react-router-dom"
 
 v5: ```import {useHistory} from "react-router-dom" ```
 
-v6: ``` import { useNavigate} from "react-router" ```
+v6: ``` import { useNavigate} from "react-router-dom" ```
 
 2. instantiate inside the function before return 
 
@@ -70,3 +70,9 @@ v6: ``` const navigate = useNavigate() ```
 v5: ``` history.push(`REDIRECT URL`) ```
 
 v6: ``` navigate(`REDIRECT URL`) ```
+
+4. To go back to the last page
+
+v5: ``` history.goBack() ```
+
+v6: ``` navigate(-1) ```
