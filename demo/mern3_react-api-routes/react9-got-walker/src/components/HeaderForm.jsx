@@ -12,8 +12,8 @@ const HeaderForm = () => {
 
     const handleSubmit =(e) =>{
         e.preventDefault()
-        navigate(`/${category}/${id}`) // history,.push(`/${category}/${id}`)
-        // clearForm()
+        navigate(`/${category}/${id}`) // history.push(`/${category}/${id}`)
+        clearForm()
     }
 
     const clearForm =()=>{

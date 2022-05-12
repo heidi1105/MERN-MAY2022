@@ -76,3 +76,42 @@ v6: ``` navigate(`REDIRECT URL`) ```
 v5: ``` history.goBack() ```
 
 v6: ``` navigate(-1) ```
+
+
+# React project (React 18 with router v6)
+1. npx create-react-app your-project-name
+2. go into the project, install dependencies (npm install axios react-router-dom)
+3. npm start (to make sure the server is running)
+4. Understand the components you need. Create all the components (rafce for the backbone of the components)
+	- create /views folder and /components folder
+	- views are the parent companents for each wireframe, components are the children components
+5. start changing App.js to display components
+
+## FORMS
+### INPUT
+1. import useState
+2. add state variable for the input  ``` const [name, setName] =  useState("")```
+3. onChange for the input ``` onChange = {e=> setName(e.target.value)}```
+
+### SUBMIT
+3. add handleSubmit  (with e.preventDefault())
+4. attach eventHandler : ``` onSubmit = { submitHandler }``` for form tag
+
+### Grab API (axios)
+```js
+axios.get(`URL`)
+	.then(res=> {
+		//successful, work with the res (most of the time, we need res.data)
+	})
+	.catch(err=>{
+		//unsuccessful , got the error in the URL
+	})
+```
+
+### useEffect (trigger the function when the page loads)
+```js
+useEffect(()=>{
+	// whatever you want to do when the page is loaded
+},[a, b, c, ])
+```
+If any of the variables (a, b, c in this example) inside the array changed, useEffect will re-run
