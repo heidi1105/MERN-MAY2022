@@ -14,6 +14,7 @@
 	- create /views folder and /components folder
 	- views are the parent companents for each wireframe, components are the children components
 5. start changing App.js to display components
+
 [Top](#react-notes)
 
 ## FORMS
@@ -25,6 +26,7 @@
 ### SUBMIT
 3. add handleSubmit  (with e.preventDefault())
 4. attach eventHandler : ``` onSubmit = { submitHandler }``` for form tag
+
 [Top](#react-notes)
 
 ### Grab API (axios)
@@ -45,6 +47,7 @@ useEffect(()=>{
 },[a, b, c, ])
 ```
 If any of the variables (a, b, c in this example) inside the array changed, useEffect will re-run
+
 [Top](#react-notes)
 
 
