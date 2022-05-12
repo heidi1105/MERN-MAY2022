@@ -1,7 +1,7 @@
 # React Notes
 1. [Create React Project](#create-react-project-react-18--router-v6)
 2. [Forms](#forms)
-3. [Axios API](#grab-api-axios)
+3. [Axios & useEffect](#grab-api-axios)
 4. [Router v5 v6 comparison](#router)
 5. [Router - redirect](#to-redirect)
 
