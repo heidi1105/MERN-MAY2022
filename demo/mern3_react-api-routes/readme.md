@@ -14,6 +14,7 @@
 	- create /views folder and /components folder
 	- views are the parent companents for each wireframe, components are the children components
 5. start changing App.js to display components
+[Top](#react-notes)
 
 ## FORMS
 ### INPUT
@@ -24,6 +25,7 @@
 ### SUBMIT
 3. add handleSubmit  (with e.preventDefault())
 4. attach eventHandler : ``` onSubmit = { submitHandler }``` for form tag
+[Top](#react-notes)
 
 ### Grab API (axios)
 ```js
@@ -43,14 +45,12 @@ useEffect(()=>{
 },[a, b, c, ])
 ```
 If any of the variables (a, b, c in this example) inside the array changed, useEffect will re-run
-
-
-
+[Top](#react-notes)
 
 
 ## ROUTER
 #### app.js
-1. Link -- similar to a tag 
+1. Link -- similar to a tag ```<Link to ="/about"> About </Link>  ```
 2. Switch(v5), Routes(v6) -- if/else statement.. if it fits the first, go to the first
 3. Route -- if the path fits, render the component
 
@@ -127,3 +127,4 @@ v5: ``` history.goBack() ```
 
 v6: ``` navigate(-1) ```
 
+[Top](#react-notes)
