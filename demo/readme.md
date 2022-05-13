@@ -35,13 +35,13 @@ If you are not able to install mongo using brew, it's possible the brew installa
     brew untapped mongodb
 ```
 
-After you untap mongodb, try to ```brew tap mongodb/brew``` one more time. If nothing can be fixed.... try mongodb cloud
+- After you untap mongodb, try to ```brew tap mongodb/brew``` one more time. If nothing can be fixed.... try mongodb cloud
 
 2. unable to start the mongodb-community server
 If you can install mongodb sucessfully but unable to run the server, try to restart the server. 
 ```brew services restart mongodb-community@5.0``` : this will restart the server
 
-If the above code doesn't work, try to stop and start the server to force restart the server. 
+- If the above code doesn't work, try to stop and start the server to force restart the server. 
 
 ```
     brew services stop mongodb-community@5.0
