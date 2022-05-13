@@ -10,6 +10,7 @@ If the port is already in use and you are not very sure where you run it, try to
 MAC/Linux: 
 
 ```lsof -i:8000```  :  getting the background process running on the port. Look for the PID
+
 ``` kill -9 34488```  : Kill the PID
 
 
