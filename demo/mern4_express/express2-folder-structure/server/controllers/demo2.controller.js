@@ -21,7 +21,7 @@ module.exports ={
     },
     createUser: (req, res)=>{
         users.push(req.body)
-        res.json({status: "ok"})
+        res.json(req.body)
     },
     updateUser : (req, res)=>{
         const id = req.params.id

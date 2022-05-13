@@ -3,8 +3,11 @@ const express = require("express")
 const app = express()
 
 // config
-app.use( express.json() );
-app.use( express.urlencoded({ extended: true }) );
+app.use( express.json() ); // enable {} 
+app.use( express.urlencoded({ extended: true}) ); 
+// urlencoded : enable post/put
+// true:  qs library (enable nested object)
+// false: querystring library (nested object will be presented in [])
 
 const Routes = require("./routes/demo.routes")
 Routes(app)
