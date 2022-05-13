@@ -6,7 +6,7 @@ const app = express()
 app.use( express.json() ); // enable {} 
 app.use( express.urlencoded({ extended: true}) ); 
 // urlencoded : enable post/put
-// true:  qs library (enable nested object)
+// true:  qs library (enable more complicated nested object)
 // false: querystring library (nested object will be presented in [])
 
 const Routes = require("./routes/demo.routes")

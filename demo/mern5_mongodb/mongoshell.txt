@@ -1,0 +1,83 @@
+1. create dbs and collection
+show dbs :  show all dbs
+use item_db
+show collections
+db.createCollection('item')
+
+2. insertMany vs insertOne
+db.item.insertOne({
+    name: "TV", 
+    price: 499, 
+    size: {
+        length: 80, 
+        height: 70
+        }
+    })
+
+db.item.insertMany([
+    {name: "PS5", price: 500, size:{length: 10, height: 50}},
+    {name: "Crimson game chair", price: 299, size: "huge"}
+])
+
+
+2. find() vs findOne
+db.item.findOne({name:"TV"}) : Return an object
+db.item.find({name:"TV"}) : Return an array
+
+
+
+3. queries to limit criteria  (lt, gt : object | and, or : array)
+db.item.find({
+    price : {$gt : 300}
+})
+
+mutiple criteria
+db.item.find({
+    $and : [
+        {price : {$gt : 300}},
+        {price : {$lt : 600}},
+        {name: 'TV'}
+    ]
+})
+
+4. delete (deleteOne, deleteMany)
+db.item.deleteOne({name: 'PS5'})
+db.item.deleteMany()
+
+
+5. update , arrays (push: repeated, addToSet : not repeated, pull, each) 
+db.item.updateMany({}, {
+    $push : {hashtags: 'giftsForHeidi'}
+})
+db.item.updateMany({}, {
+    $push : {hashtags: 'ProfessionalGamer'}
+})
+
+db.item.updateMany({}, {
+    $addToSet : {hashtags: 'ProfessionalGamer'}
+})
+
+db.item.updateMany({}, {
+    $pull : {hashtags: 'ProfessionalGamer'}
+})
+
+add expensive hashtag to all items that is >$500
+db.item.updateMany({
+    price : {$gt : 500}
+}, {
+    $addToSet : {hashtags: 'expensive'}
+})
+
+db.item.updateMany({
+    name: 'TV'
+}, {
+    $addToSet : {hashtags: 'Movies'}
+})
+
+db.item.updateMany({}, {
+    $addToSet : {
+        hashtags: {$each: ['bestbuy', 'ProfessionalGamer', 'walmart']}}
+})
+
+
+db.item.updateMany({}, [{$unset: ['hashtags']}])
