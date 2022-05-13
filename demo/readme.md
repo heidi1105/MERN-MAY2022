@@ -36,6 +36,10 @@ If you are not able to install mongo using brew, it's possible the brew installa
     brew untapped mongodb
 ```
 
+- if it doesn't work, try also the following command. 
+
+```eval $(/opt/homebrew/bin/brew shellenv)```
+
 - After you untap mongodb, try to ```brew tap mongodb/brew``` one more time. If nothing can be fixed.... try mongodb cloud
 
 2. unable to start the mongodb-community server
