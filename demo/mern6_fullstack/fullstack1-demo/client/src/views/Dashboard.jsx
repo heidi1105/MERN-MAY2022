@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
+import { Link } from 'react-router-dom'
 
-// get info from backend
+// get info from backend automatically 
 // 1. axios to get info
 // 2. state
 // 3. useEffect
@@ -28,15 +29,17 @@ const Dashboard = () => {
                         <th> Title</th>
                         <th> Artist</th>
                         <th> Rating</th>
+                        <th colSpan={2}> Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         songs.map((song, i)=>(
                             <tr key={i}>
-                                <td> {song.title}</td>
+                                <td> <Link to={`/songs/${song._id}`} >{song.title}</Link></td>
                                 <td> {song.artist}</td>
                                 <td> {song.rating}</td>
+                                <td> <Link to={`/songs/${song._id}/edit`}> Edit</Link></td>
                             </tr>
                         ))
                     }

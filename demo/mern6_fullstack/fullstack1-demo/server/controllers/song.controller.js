@@ -6,8 +6,42 @@ module.exports.testAPI = (req, res)=>{
     res.json("Backend message")
 }
 
+
+// get all
 module.exports.allSongs = (req, res)=>{
     Song.find()
         .then(songs => res.json(songs))
         .catch(err=> res.json(err))
+}
+
+// create
+module.exports.createSong = (req, res) =>{
+    Song.create(req.body) // inside () --> info to create the Song
+        .then(newSong => res.json(newSong))
+        .catch(err=> res.json(err))
+}
+
+// get one
+module.exports.oneSong = (req, res) =>{
+    Song.findOne({ _id: req.params.id })
+        .then(song=> res.json(song))
+        .catch(err=> res.json(err))
+}
+
+// update
+module.exports.updateSong = (req, res) =>{
+    Song.findOneAndUpdate(
+        { _id: req.params.id },
+        req.body,
+        {new:true, runValidators:true}
+    )
+        .then(song=>res.json(song))
+        .catch(err=>res.json(err))
+
+}
+// delete
+module.exports.deleteSong = (req, res) =>{
+    Song.deleteOne({_id : req.params.id})
+        .then(result => res.json(result))
+        .catch(err=>res.json(err))
 }
