@@ -7,9 +7,10 @@ import { Link, useNavigate } from 'react-router-dom'
 // 2. state
 // 3. useEffect
 
-const Dashboard = () => {
+const Dashboard2 = () => {
     const [songs, setSongs] = useState([])
     const navigate = useNavigate()
+    const [refresh, setRefresh] = useState(true)
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/songs`)
@@ -18,13 +19,12 @@ const Dashboard = () => {
                 setSongs(response.data)
             })
             .catch(err=>console.log(err))
-    },[])
+    },[refresh])
 
     const handleDelete =(deleteId) =>{
         axios.delete(`http://localhost:8000/api/songs/${deleteId}`)
             .then(response=>{
-                const filteredList = songs.filter((song, i)=>song._id !== deleteId)
-                setSongs(filteredList)
+                setRefresh(!refresh)
             })
             .catch(err=>console.log(err))
     }
@@ -59,4 +59,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Dashboard2

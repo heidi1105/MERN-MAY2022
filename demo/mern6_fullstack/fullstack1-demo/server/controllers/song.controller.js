@@ -35,7 +35,7 @@ module.exports.updateSong = (req, res) =>{
         req.body,
         {new:true, runValidators:true}
     )
-        .then(song=>res.json(song))
+        .then(updatedSong=>res.json(updatedSong))
         .catch(err=>res.json(err))
 
 }
