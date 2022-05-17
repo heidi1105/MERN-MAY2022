@@ -3,6 +3,7 @@ import Create from "./views/Create";
 import Dashboard from "./views/Dashboard";
 import Dashboard2 from "./views/Dashboard2";
 import Details from "./views/Details";
+import Main from "./views/Main";
 import TestComponent from "./views/TestComponent";
 import Update from "./views/Update";
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Link to="/songs/new"> Create new songs</Link>
 
     <Routes>
+      <Route path="" element={<Main />} />
       <Route path="/testapi" element={<TestComponent />} />
       <Route path="/songs" element={<Dashboard />} />
       <Route path="/songs2" element={<Dashboard2 />} />

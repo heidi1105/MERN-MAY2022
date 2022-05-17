@@ -1,28 +1,41 @@
 import React, { useState } from 'react'
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
-// have form, send info to backend after submit
-// backend : axios
-// form: state (for each input, one state)
-// after creating, redirect to dashboard (navigate)
-
-const Create = () => {
+const CreateForm = (props) => {
     const [title, setTitle] = useState("")
     const [artist, setArtist] = useState("")
     const [rating, setRating] = useState(3)
-    const navigate = useNavigate()
-
+    const [errors, setErrors] = useState([])
+    
     const handleSubmit=(e) =>{
         e.preventDefault()
         axios.post(`http://localhost:8000/api/songs`, {title, artist, rating})
-            .then(response=>navigate(`/songs`))
-            .catch(err=>console.log(err.response.data))
+            .then(response=>{
+                console.log(response)
+                props.reloadList()
+                clearForm()
+            })
+            .catch(err=>{
+                const errArr =[]
+                const errResData = err.response.data.errors
+                console.log(errResData)
+                for(const key in errResData){
+                    errArr.push(errResData[key]["message"])
+                }
+                setErrors(errArr)
+            })
+    }   
+
+    const clearForm = () =>{
+        setTitle("")
+        setArtist("")
+        setRating(3)
     }
 
     return (
         <fieldset>
-            <legend> Create.jsx</legend>
+            <legend> CreateForm.jsx</legend>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label> Title</label>
@@ -41,10 +54,13 @@ const Create = () => {
                 </div>
                 <button type="submit">Create a new song</button>
             </form>
-
-
+            {
+                errors.map((err, i)=>(
+                    <p key={i} style={{color: "red"}}> {err} </p>
+                ))
+            }
         </fieldset>
     )
 }
 
-export default Create
+export default CreateForm
