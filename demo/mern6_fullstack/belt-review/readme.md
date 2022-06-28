@@ -5,4 +5,4 @@
 
 ## Setup
 - server dependencies: express, mongoose, cors
-- client dependencies: react-router-dom@5, axios
+- client dependencies: react-router-dom, axios
