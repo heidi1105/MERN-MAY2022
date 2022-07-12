@@ -3,11 +3,13 @@ import './App.css';
 import FetchComponent from './components/FetchComponent';
 import DisplayOnLoad from './components/DisplayOnLoad';
 import PokemonForm from './components/PokemonForm';
+import PokemonChallenge from './views/PokemonChallenge';
 
 function App() {
   return (
     <div>
-      <PokemonForm />
+      <PokemonChallenge />
+      {/* <PokemonForm /> */}
       {/* <DisplayOnLoad /> */}
 
       {/* <FetchComponent /> */}
